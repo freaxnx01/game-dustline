@@ -220,7 +220,11 @@ document.addEventListener('DOMContentLoaded', async function() {
       nav.innerHTML =
         '<a href="https://github.freaxnx01.ch/games/" style="color:#8fd8e8;text-decoration:none">More Games…</a>' +
         '<span style="color:#5a6072" aria-hidden="true">·</span>' +
-        '<a href="' + SRC + '" target="_blank" rel="noopener" style="color:#8fd8e8;text-decoration:none">Source</a>';
+        '<a href="' + SRC + '" target="_blank" rel="noopener" style="color:#8fd8e8;text-decoration:none">Source</a>' +
+        '<span style="color:#5a6072" aria-hidden="true">·</span>' +
+        '<a href="' + SRC + '/issues/new?title=%5BFeedback%5D%20game-dustline&labels=feedback" target="_blank" rel="noopener" style="color:#8fd8e8;text-decoration:none">Feedback</a>' +
+        '<span style="color:#5a6072" aria-hidden="true">·</span>' +
+        '<a class="github-button" href="' + SRC + '" data-icon="octicon-star" data-size="small" data-show-count="true" aria-label="Star freaxnx01/game-dustline on GitHub">Star</a>';
       document.body.appendChild(nav);
     }
   }
@@ -229,5 +233,6 @@ document.addEventListener('DOMContentLoaded', async function() {
   window.addEventListener("load", ensure);
 })();
 </script>
+<script async defer crossorigin="anonymous" src="https://buttons.github.io/buttons.js"></script>
 </body>
 </html>
