@@ -19,6 +19,7 @@
   </noscript>
 </head>
 <body>
+<script src="./version.js"></script>
   <div id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#C9B180"></rect><g transform="translate(50 52)"><rect x="-3" y="-16" width="6" height="30" rx="2" fill="#3D4A55"></rect><rect x="-16" y="-4" width="32" height="6" rx="2" fill="#4C5C69"></rect><rect x="-1.5" y="-19" width="3" height="34" fill="#232A31" transform="rotate(40)"></rect><rect x="-1.5" y="-19" width="3" height="34" fill="#232A31" transform="rotate(-50)"></rect></g><text x="50" y="90" text-anchor="middle" font-family="sans-serif" font-weight="700" font-size="9" fill="#2A241C">DUSTLINE</text></svg></div>
   <div id="__bundler_loading">Unpacking...</div>
 
@@ -226,6 +227,14 @@ document.addEventListener('DOMContentLoaded', async function() {
         '<span style="color:#5a6072" aria-hidden="true">·</span>' +
         '<a class="github-button" href="' + SRC + '" data-icon="octicon-star" data-size="small" data-show-count="true" aria-label="Star freaxnx01/game-dustline on GitHub">Star</a>';
       document.body.appendChild(nav);
+    }
+    if (document.body && !document.getElementById("version-badge")) {
+      var badge = document.createElement("div");
+      badge.id = "version-badge";
+      badge.title = "Version";
+      badge.style.cssText = "position:fixed;right:8px;bottom:6px;z-index:2147483647;font:600 11px/1 system-ui,-apple-system,sans-serif;color:#8a8f9c;opacity:.5;pointer-events:none";
+      badge.textContent = "v" + (window.GAME_VERSION || "0.0.0");
+      document.body.appendChild(badge);
     }
   }
   var n = 0, iv = setInterval(function () { ensure(); if (++n > 40) clearInterval(iv); }, 250);
