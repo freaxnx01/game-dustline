@@ -231,9 +231,15 @@ document.addEventListener('DOMContentLoaded', async function() {
     if (document.body && !document.getElementById("version-badge")) {
       var badge = document.createElement("div");
       badge.id = "version-badge";
-      badge.title = "Version";
-      badge.style.cssText = "position:fixed;right:8px;bottom:6px;z-index:2147483647;font:600 11px/1 system-ui,-apple-system,sans-serif;color:#8a8f9c;opacity:.5;pointer-events:none";
-      badge.textContent = "v" + (window.GAME_VERSION || "0.0.0");
+      badge.style.cssText = "position:fixed;right:8px;bottom:6px;z-index:2147483647;font:600 11px/1 system-ui,-apple-system,sans-serif;color:#8a8f9c;opacity:.5";
+      var link = document.createElement("a");
+      link.href = "https://github.com/freaxnx01/game-dustline/blob/main/CHANGELOG.md";
+      link.target = "_blank";
+      link.rel = "noopener";
+      link.title = "Changelog";
+      link.style.cssText = "color:inherit;text-decoration:none";
+      link.textContent = "v" + (window.GAME_VERSION || "0.0.0");
+      badge.appendChild(link);
       document.body.appendChild(badge);
     }
   }
